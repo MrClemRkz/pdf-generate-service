@@ -1,8 +1,8 @@
 const { validationResult } = require('express-validator');
 const puppeteer = require('puppeteer');
-const config = require('../config');
-const baseURL = config('BASE_URL');
-const expiresIn = config('EXPIRES_IN');
+
+const baseURL = process.env.BASE_URL;
+const expiresIn = process.env.EXPIRES_IN;
 
 module.exports = async function(req, res) {
     const errors = validationResult(req);

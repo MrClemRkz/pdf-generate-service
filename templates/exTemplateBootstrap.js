@@ -1,5 +1,5 @@
-const config = require('../config');
-const baseURL = config('BASE_URL');
+
+const baseURL = process.env.BASE_URL;
 
 module.exports = (data) => {
     return (

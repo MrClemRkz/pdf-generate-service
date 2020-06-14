@@ -1,5 +1,5 @@
 const puppeteer = require('puppeteer');
-const config = require('./config');
+
 // when headless state is false, you can preview the output on chromium browser. Yet it malfunctions.
 // therefore keep headless state true to get the expected pdf output.
 const headlessState = true;

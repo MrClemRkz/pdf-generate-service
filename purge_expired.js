@@ -1,11 +1,11 @@
 const fs = require('fs');
-const config = require('./config');
-const expiresIn = config('EXPIRES_IN');
+
+const expiresIn = process.env.EXPIRES_IN;
 
 purgeExpired();
 setInterval( () => {
     purgeExpired();
-}, config('EXPIRE_CHECK_INTERVAL') * 1000);
+}, process.env.EXPIRE_CHECK_INTERVAL * 1000);
 
 function purgeExpired() {
     const currentTimestamp = Math.round(Date.now() / 1000);
