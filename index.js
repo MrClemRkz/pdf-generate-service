@@ -23,8 +23,9 @@ const speedLimiter = slowDown({
   delayMs: process.env.RATE_LIMIT_DELAY_MS // eg:- if given as 100, 2nd request has a 100ms delay, 3rd has a 200ms delay, 4th gets 300ms, etc. [defaults to Infinity]
 });
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(bodyParser.json({ limit: '50mb', extended: true }));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use(upload.array());
 app.use(express.static('static'))
 
